@@ -1,3 +1,3 @@
-#Telegram
-#  Test the Telegram app using selenium and appium
+#  Telegram
+# Test the Telegram app using selenium and appium
  
