@@ -1,11 +1,8 @@
 package com.mobile.telegram;
 
-import io.appium.java_client.MobileElement;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.AndroidElement;
-import io.appium.java_client.android.StartsActivity;
 import io.appium.java_client.remote.MobileCapabilityType;
-import org.junit.Assert;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
 import java.net.MalformedURLException;

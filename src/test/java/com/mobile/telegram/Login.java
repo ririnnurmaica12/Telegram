@@ -29,10 +29,11 @@ public class Login extends BaseAndroidTest  {
         assertTrue(loginHelper.isOtpVerificationInstructionVisible());
         loginHelper.clickOkButton().click();
         loginHelper.clickAllowPhoneCallButton().click();
+        //loginHelper.enterCodeCountry().setValue("62");
         loginHelper.enterNumberPhone().setValue("0821xxxxxxxx");
         loginHelper.clickButtonDone().click();
-        loginHelper.clickOkButton().click();
-        loginHelper.clickAllowPhoneCallButton().click();
+        loginHelper.clickOkButtonLast().click();
+        loginHelper.clickAllowPhoneCallButtonLast().click();
     }
 
 }

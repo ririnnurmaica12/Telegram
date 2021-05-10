@@ -26,17 +26,31 @@ public class LoginHelper {
     }
     public AndroidElement clickOkButton(){
         String okButton = "/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout[2]/android.widget.TextView";
-        (new WebDriverWait(driver,50)).until(ExpectedConditions.visibilityOf(driver.findElement(By.xpath(okButton))));
+        (new WebDriverWait(driver,30)).until(ExpectedConditions.visibilityOf(driver.findElement(By.xpath(okButton))));
+        return driver.findElement(By.xpath(okButton));
+    }
+    public AndroidElement clickOkButtonLast(){
+        String okButton = "/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout[2]/android.widget.TextView";
+        (new WebDriverWait(driver,75)).until(ExpectedConditions.invisibilityOfElementLocated(By.xpath(okButton)));
         return driver.findElement(By.xpath(okButton));
     }
     public AndroidElement clickAllowPhoneCallButton(){
         String allowButton = "/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.ScrollView/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.Button[2]";
-        (new WebDriverWait(driver,30)).until(ExpectedConditions.visibilityOf(driver.findElement(By.xpath(allowButton))));
-
+        (new WebDriverWait(driver,100)).until(ExpectedConditions.visibilityOf(driver.findElement(By.xpath(allowButton))));
         return driver.findElement(By.xpath(allowButton));
+    }
+    public AndroidElement clickAllowPhoneCallButtonLast(){
+        String allowButton = "/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.ScrollView/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.Button[2]";
+        (new WebDriverWait(driver,100)).until(ExpectedConditions.invisibilityOfElementLocated(By.xpath(allowButton)));
+        return driver.findElement(By.xpath(allowButton));
+    }
+    public AndroidElement enterCodeCountry(){
+        String columnCode ="/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout[2]/android.widget.FrameLayout[2]/android.widget.ScrollView/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.EditText[1]";
+        return driver.findElement(By.xpath(columnCode));
     }
     public AndroidElement enterNumberPhone(){
         String columnPhoneNumber ="/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout[2]/android.widget.FrameLayout[2]/android.widget.ScrollView/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.EditText[2]";
+        (new WebDriverWait(driver,30)).until(ExpectedConditions.visibilityOf(driver.findElement(By.xpath(columnPhoneNumber))));
         return driver.findElement(By.xpath(columnPhoneNumber));
     }
     public AndroidElement clickButtonDone(){
