@@ -36,12 +36,12 @@ public class LoginHelper {
     }
     public AndroidElement clickAllowPhoneCallButton(){
         String allowButton = "/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.ScrollView/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.Button[2]";
-        (new WebDriverWait(driver,100)).until(ExpectedConditions.visibilityOf(driver.findElement(By.xpath(allowButton))));
+        (new WebDriverWait(driver,30)).until(ExpectedConditions.visibilityOf(driver.findElement(By.xpath(allowButton))));
         return driver.findElement(By.xpath(allowButton));
     }
     public AndroidElement clickAllowPhoneCallButtonLast(){
         String allowButton = "/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.ScrollView/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.Button[2]";
-        (new WebDriverWait(driver,100)).until(ExpectedConditions.invisibilityOfElementLocated(By.xpath(allowButton)));
+        (new WebDriverWait(driver,30)).until(ExpectedConditions.invisibilityOfElementLocated(By.xpath(allowButton)));
         return driver.findElement(By.xpath(allowButton));
     }
     public AndroidElement enterCodeCountry(){

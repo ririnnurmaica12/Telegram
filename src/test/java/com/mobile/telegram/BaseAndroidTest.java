@@ -22,6 +22,8 @@ public class BaseAndroidTest {
         dc.setCapability("platformName",APP_PLATFORMNAME);
         dc.setCapability("appPackage", APP_PACKAGE);
         dc.setCapability("appActivity", APP_ACTIVITY);
+        dc.setCapability(MobileCapabilityType.FULL_RESET, false);
+        dc.setCapability(MobileCapabilityType.NO_RESET, true);
 
         URL url = new URL(APPIUM_SERVER);
         driver = new AndroidDriver<AndroidElement>(url, dc);
