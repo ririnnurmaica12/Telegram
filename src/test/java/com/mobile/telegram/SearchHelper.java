@@ -23,9 +23,10 @@ public class SearchHelper {
         (new WebDriverWait(driver,30)).until(ExpectedConditions.visibilityOf(driver.findElement(By.xpath(columnSearch))));
         return driver.findElement(By.xpath(columnSearch));
     }
-    public AndroidElement resultOfSearch(){
-        String dataResult ="/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout[2]/android.widget.FrameLayout/android.widget.FrameLayout[2]/android.widget.FrameLayout/androidx.recyclerview.widget.RecyclerView/android.view.ViewGroup[1]";
-        (new WebDriverWait(driver,100)).until(ExpectedConditions.visibilityOf(driver.findElement(By.xpath(dataResult))));
+    public AndroidElement resultOfSearch() {
+        String dataResult ="/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout[3]/android.widget.FrameLayout/androidx.recyclerview.widget.RecyclerView/android.view.ViewGroup[1]";
+        (new WebDriverWait(driver,30)).until(ExpectedConditions.visibilityOf(driver.findElement(By.xpath(dataResult))));
+        //Thread.sleep(2000);
         return driver.findElement(By.xpath(dataResult));
     }
 

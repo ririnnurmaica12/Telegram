@@ -16,19 +16,18 @@ public class SendMessage extends BaseAndroidTest {
     }
 
     @Test
-    public void searchUser(){
+    public void searchUser() {
         searchHelper.clickIconSearch().click();
-        searchHelper.columnSearch().setValue("suamiku");
         searchHelper.resultOfSearch().click();
     }
 
     @Test
     public void textMessage(){
-        sendMessageHelper.textMessage().setValue("send message from ririn");
+        sendMessageHelper.textMessage().setValue("kirim pesan");
     }
 
     @Test
-    public void sendMessage(){
+    public void textMessageSend(){
         sendMessageHelper.sendMessage().click();
     }
 }

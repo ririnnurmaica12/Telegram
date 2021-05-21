@@ -1,5 +1,6 @@
 package com.mobile.telegram;
 
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
@@ -12,6 +13,11 @@ public class Search extends BaseAndroidTest{
     public void init() throws MalformedURLException {
         BaseAndroidTest.initDriver();
         searchHelper = new SearchHelper(driver);
+    }
+
+    @AfterClass
+    public void Close(){
+        BaseAndroidTest.quitDriver();
     }
     @Test
     public void clickIconSearch(){
