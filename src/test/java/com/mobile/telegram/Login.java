@@ -1,6 +1,9 @@
 package com.mobile.telegram;
 
-import org.testng.annotations.AfterClass;
+import cucumber.api.PendingException;
+import cucumber.api.java.en.Given;
+import cucumber.api.java.en.Then;
+import cucumber.api.java.en.When;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
@@ -13,27 +16,38 @@ public class Login extends BaseAndroidTest  {
     private LoginHelper loginHelper;
 
     @BeforeClass
-    public void init() throws MalformedURLException {
+    @Given("^open the telegram application$")
+    public void open_the_telegram_application() throws MalformedURLException {
         BaseAndroidTest.initDriver();
         loginHelper = new LoginHelper(driver);
     }
 
     @Test
-    public void startMessagingButtonShouldBeVisible(){
+    @When("^Click button satart message$")
+    public void click_button_satart_message() throws Throwable {
         assertTrue(loginHelper.isStartMessagingBtnVisible());
         assertEquals(loginHelper.startMessaging().getText(), "Start Messaging");
-    }
-    @Test(dependsOnMethods={"startMessagingButtonShouldBeVisible"})
-    public void verificationActivityOpenApp(){
         loginHelper.clickStartMessagingBtn();
-        assertTrue(loginHelper.isOtpVerificationInstructionVisible());
+    }
+
+    @When("^Fill the \"([^\"]*)\"$")
+    public void fill_the(String phoneNumber) throws Throwable {
         loginHelper.clickOkButton().click();
-        loginHelper.clickAllowPhoneCallButton().click();
-        //loginHelper.enterCodeCountry().setValue("62");
-        loginHelper.enterNumberPhone().setValue("0821xxxxxxxx");
+        loginHelper.clickAllowPhoneCallButtonLast().click();
+        loginHelper.enterNumberPhone().setValue(phoneNumber);
+    }
+
+    @When("^Click button next$")
+    public void click_button_next() throws Throwable {
         loginHelper.clickButtonDone().click();
         loginHelper.clickOkButtonLast().click();
         loginHelper.clickAllowPhoneCallButtonLast().click();
+    }
+
+    @Then("^Login should be \"([^\"]*)\"$")
+    public void login_should_be(String arg1) throws Throwable {
+        // Write code here that turns the phrase above into concrete actions
+        throw new PendingException();
     }
 
 }
