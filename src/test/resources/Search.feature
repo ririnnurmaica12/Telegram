@@ -8,5 +8,5 @@ Feature: Search
 
     Examples:
       |contactName      |result    |
-      | suami           | Success  |
+      | ririn           | Success  |
 
