@@ -4,6 +4,7 @@ import cucumber.api.PendingException;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
@@ -18,27 +19,27 @@ public class Login extends BaseAndroidTest  {
     @BeforeClass
     @Given("^open the telegram application$")
     public void open_the_telegram_application() throws MalformedURLException {
-        BaseAndroidTest.initDriver();
+        BaseAndroidTest.initDriverReset();
         loginHelper = new LoginHelper(driver);
     }
 
     @Test
     @When("^Click button satart message$")
-    public void click_button_satart_message() throws Throwable {
+    public void click_button_satart_message() {
         assertTrue(loginHelper.isStartMessagingBtnVisible());
         assertEquals(loginHelper.startMessaging().getText(), "Start Messaging");
         loginHelper.clickStartMessagingBtn();
     }
 
     @When("^Fill the \"([^\"]*)\"$")
-    public void fill_the(String phoneNumber) throws Throwable {
+    public void fill_the(String phoneNumber) {
         loginHelper.clickOkButton().click();
         loginHelper.clickAllowPhoneCallButtonLast().click();
         loginHelper.enterNumberPhone().setValue(phoneNumber);
     }
 
     @When("^Click button next$")
-    public void click_button_next() throws Throwable {
+    public void click_button_next() {
         loginHelper.clickButtonDone().click();
         loginHelper.clickOkButtonLast().click();
         loginHelper.clickAllowPhoneCallButtonLast().click();
@@ -50,4 +51,8 @@ public class Login extends BaseAndroidTest  {
         throw new PendingException();
     }
 
+    /*@AfterClass
+    public void Close(){
+        BaseAndroidTest.quitDriver();
+    }*/
 }
