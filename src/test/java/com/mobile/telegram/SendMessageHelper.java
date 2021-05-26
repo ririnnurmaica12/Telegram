@@ -22,4 +22,4 @@ public class SendMessageHelper {
         String sendMessage ="//android.view.View[@content-desc=\"Send\"]";
         return driver.findElement(By.xpath(sendMessage));
     }
-    }
+}
