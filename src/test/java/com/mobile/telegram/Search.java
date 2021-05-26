@@ -20,21 +20,21 @@ public class Search extends BaseAndroidTest{
         searchHelper = new SearchHelper(driver);
     }
 
-
+    @Test
     @When("^Click icon search$")
-    public void click_icon_search() throws Throwable {
+    public void click_icon_search() {
         searchHelper.clickIconSearch().click();
     }
 
 
     @When("^Type the \"([^\"]*)\" to be searched$")
-    public void type_the_to_be_searched(String contactName) throws Throwable {
+    public void type_the_to_be_searched(String contactName) {
         searchHelper.columnSearch().setValue(contactName);
     }
 
 
     @Then("^Search should be \"([^\"]*)\"$")
-    public void search_should_be(String result) throws Throwable {
+    public void search_should_be(String result) {
         searchHelper.resultOfSearch().click();
     }
 
