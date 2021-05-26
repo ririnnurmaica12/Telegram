@@ -2,7 +2,7 @@ Feature: Login
 
   Scenario Outline: User try to login
     Given open the telegram application
-    When Click button satart message
+    When Click button start message
     And Fill the "<phoneNumber>"
     And Click button next
     Then Login should be "<result>"
