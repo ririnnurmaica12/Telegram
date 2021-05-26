@@ -29,6 +29,19 @@ public class BaseAndroidTest {
         driver = new AndroidDriver<AndroidElement>(url, dc);
        }
 
+    public static void initDriverReset () throws MalformedURLException {
+        DesiredCapabilities dc = new DesiredCapabilities();
+        dc.setCapability(MobileCapabilityType.DEVICE_NAME, APP_DEVICENAME);
+        dc.setCapability("platformName",APP_PLATFORMNAME);
+        dc.setCapability("appPackage", APP_PACKAGE);
+        dc.setCapability("appActivity", APP_ACTIVITY);
+        dc.setCapability(MobileCapabilityType.FULL_RESET, true);
+        dc.setCapability(MobileCapabilityType.NO_RESET, false);
+
+        URL url = new URL(APPIUM_SERVER);
+        driver = new AndroidDriver<AndroidElement>(url, dc);
+    }
+
     public static void quitDriver() {
         if (driver != null) {
             driver.quit();
