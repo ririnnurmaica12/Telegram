@@ -1,12 +1,12 @@
 Feature: Search
 
   Scenario Outline: User try to search contact
-    Given User is logged in application telegram
+    Given Open the application telegram and user is logged in
     When Click icon search
     And Type the "<contactName>" to be searched
     Then Search should be "<result>"
 
     Examples:
       |contactName      |result    |
-      | ririn           | Success  |
+      | Hendra danu           | Success  |
 

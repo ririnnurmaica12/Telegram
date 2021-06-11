@@ -24,7 +24,7 @@ public class SearchHelper {
         return driver.findElement(By.xpath(columnSearch));
     }
     public AndroidElement resultOfSearch() {
-        String dataResult ="/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout[3]/android.widget.FrameLayout/androidx.recyclerview.widget.RecyclerView/android.view.ViewGroup[1]";
+        String dataResult ="/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout[2]/android.widget.FrameLayout/android.widget.FrameLayout[3]/android.widget.FrameLayout/androidx.recyclerview.widget.RecyclerView/android.view.ViewGroup[1]";
         (new WebDriverWait(driver,30)).until(ExpectedConditions.visibilityOf(driver.findElement(By.xpath(dataResult))));
         return driver.findElement(By.xpath(dataResult));
     }
