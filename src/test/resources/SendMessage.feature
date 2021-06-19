@@ -10,7 +10,10 @@ Feature: Send Message
 
     Examples:
       |message      |result    |
-      |ririn       | Success  |
+      |ririn        |Success   |
+      |w4242        |Success   |
+      |##@$@$@      |Success   |
+      |             |Failed    |
 
 
   Scenario Outline: User try to send message from feature add new message
@@ -24,5 +27,11 @@ Feature: Send Message
     Then send message should be "<result>"
 
     Examples:
-      |textMessage           |contactName|result    |
-      | ririn hello          |Hendara danu      | Success  |
+      |textMessage           |contactName       |result    |
+      |ririn hello           |Hendara danu      |Success   |
+      |w4242                 |Hendara danu      |Success   |
+      |##@$@$@               |Hendara danu      |Success   |
+      |                      |Hendara danu      |Failed    |
+      |adsdasaa              |12312SA           |Failed    |
+      |                      |@@@%%%$$          |Failed    |
+      |                      |                  |Failed    |
