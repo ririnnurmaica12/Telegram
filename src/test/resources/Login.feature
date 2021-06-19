@@ -10,6 +10,10 @@ Feature: Login
 
     Examples:
             |phoneNumber     |result    |
-            | 082139804022   | Success  |
+            |082139804022    |Success   |
+            |kkjkjkjkjkjj    |Failed    |
+            |0000000000000   |Failed    |
+            |**#####         |Failed    |
+            |                |Failed    |
 
 
