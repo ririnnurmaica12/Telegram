@@ -8,5 +8,8 @@ Feature: Search
 
     Examples:
       |contactName      |result    |
-      | Hendra danu           | Success  |
+      |Hendra danu      |Success   |
+      |4893289          |Failed    |
+      |@@@###           |Failed    |
+      |                 |Failed    |
 
